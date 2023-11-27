@@ -73,7 +73,7 @@ int main()
 
         if ((activity < 0) && (WSAGetLastError() != WSAEINTR))
         {
-            printf("select error");
+            printf("select error: %d\n", WSAGetLastError()); // Added error code to the error message
         }
 
         // If something happened on the master socket, then it's an incoming connection
